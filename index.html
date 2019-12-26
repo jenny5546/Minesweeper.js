@@ -1,0 +1,102 @@
+
+<html>
+    <head>
+        <h1>Jaeeun Lee</h1>
+        <style>
+            
+            .row {
+                display: flex;
+            }
+            .cell {
+                align-items: center;
+                background: hotpink;
+                border: 2px solid whitesmoke;
+                height: 30px;
+                justify-content: center;
+                width: 30px;
+                font-size: 30px;
+            }
+            .cell.opened {
+                background:coral;
+                font-size: 20px;
+            }
+            .cell.flagged::before {
+                align-items: center;
+                content: 'flag';
+                display: flex;
+                font-size: 10px;
+                justify-content: center;
+            }
+            #minutes{
+                display: inline;
+            }
+            #seconds{
+                display: inline;
+            }
+            #mineRemaining{
+                flex-direction: row;
+                display: inline;
+                font-size: 30px;
+            }
+            #timeCounter{
+                flex-direction:row;
+                text-align: right;
+                font-size: 30px;
+            }
+            #resetButton{
+                text-align: center;
+            }
+        
+        </style>
+    </head>
+
+    <body>
+        <div id="minesweeper">
+            <!--게임 행렬 설정 박스의 div-->
+
+            <div id="game-settings"> 
+                <form id="settings-input">
+                        <label for="rows-input">Rows</label>
+                        <input id="rows-input" class= "rows-input" type="number" max=30 min=5 value=10>
+                    
+                        <label for="columns-input">Columns</label>
+                        <input id="columns-input" class= "columns-input" type="number" max=30 min=5 value=10>
+                    
+                        <label for="mines-input">Number of Mines</label>
+                        <input id= "mines-input" class= "mines-input" type="number" min=0 value=10>
+                        
+                        <label for="Start">Press to Start!</label>
+                        <input type="submit" value="Press to Start!"/>
+                </form>
+            </div> 
+
+
+            <!--실제 게임 박스의 div-->
+            <div id= "game-box">
+
+                <div id="game-header"> 
+                    Mines Left: <div id= "mineRemaining"></div>
+
+                    <div id="resetButton">
+                        <form id="reset">
+                            <button type="reset" value="Reset">Reset</button>
+                        </form>
+                    </div>
+                    
+                    <div id="timeCounter">
+                        <div id= "minutes">00</div> : <div id= "seconds">00</div>
+                    </div>
+                    
+                </div>
+                <div id="game-board"></div>
+            </div>
+        </div>      
+        <script type="text/javascript" src="./game.js"></script>
+
+    </body>
+
+
+
+
+
+</html>
